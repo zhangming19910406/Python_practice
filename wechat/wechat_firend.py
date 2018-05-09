@@ -14,10 +14,14 @@ import os
 from matplotlib import pyplot as plt
 
 def draw(datas):
+    x = []
+    y = []
     for key in datas.keys():
-        import pdb
-        pdb.set_trace()
-        plt.bar(key, datas[key])
+        x.append(key)
+        y.append(datas[key])
+    # import pdb
+    # pdb.set_trace()
+    plt.bar([1, 2, 3], y)
 
     plt.legend()
     plt.xlabel('sex')
@@ -29,7 +33,7 @@ def parse_friends():
     itchat.login()
     text = dict()
     friends = itchat.get_friends(update=True)[0:]
-    print(friends)
+    # print(friends)
     male = "male"
     female = "female"
     other = "other"
