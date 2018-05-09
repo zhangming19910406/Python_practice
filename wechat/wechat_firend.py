@@ -14,19 +14,24 @@ import os
 from matplotlib import pyplot as plt
 
 def draw(datas):
-    x = []
-    y = []
+    data = []
     for key in datas.keys():
-        x.append(key)
-        y.append(datas[key])
+        data.append(datas[key])
     # import pdb
     # pdb.set_trace()
-    plt.bar([1, 2, 3], y)
+    fig, ax = plt.subplots()
+    ind = np.arange(1, 4)
+    pm, pc, pn = plt.bar(ind, data)
 
-    plt.legend()
-    plt.xlabel('sex')
-    plt.ylabel('rate')
-    plt.title('Gender of Alfred\'s friends')
+    pm.set_facecolor('r')
+    pc.set_facecolor('g')
+    pn.set_facecolor('b')
+    ax.set_xticks(ind)
+    ax.set_xticklabels(['female', 'male', 'don\'t know'])
+    ax.set_ylim([0, 250])
+    ax.set_ylabel('number')
+    ax.set_title('sex')
+    ax.set_title('Gender of zhangming\'s friends')
     plt.show()
 
 def parse_friends():
