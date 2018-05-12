@@ -11,7 +11,6 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import random
 import os
-from matplotlib import pyplot as plt
 
 def draw(datas):
     data = []
