@@ -24,7 +24,7 @@ def parse_signature():
         rep = re.compile('1f\d+\w*|[<>/=]')
         signature = rep.sub('', signature)
         siglist.append(signature)
-    text = ''.join(siglist)
+    text = ' '.join(siglist)
     with io.open('text.txt', 'a', encoding='utf-8') as f:
         wordlist = jieba.cut(text, cut_all=True)
         word_space_split = " ".join(wordlist)
