@@ -14,7 +14,8 @@ class Downloader(object):
         self.throttle = Throttle(delay)
         self.headers = headers
         self.cookies = cookies
-        self.proxies = ProxiesPool()
+        # self.proxies = ProxiesPool()
+        self.proxies = proxies
         self.num_retries = num_retries
         self.cache = cache
 
@@ -48,10 +49,10 @@ class Downloader(object):
         if num_retries > 0:
             try:
                 self.throttle.wait(url)
-                print(proxies_to_pass)
+                # print(proxies_to_pass)
                 r = requests.get(url, headers=headers, cookies=cookies, proxies=proxies_to_pass, timeout=30)
                 code = r.status_code
-                print(code)
+                # print(code)
                 r.raise_for_status()
                 if code == 200:
                     html = r.text
