@@ -59,6 +59,9 @@ class ScrapeClassbackStreetPage(object):
         self.writer.writerows(to_write_links)
 
 
+
+
+
 if __name__ == '__main__':
     D = Downloader()
     html = D('http://esf.nb.fang.com/house/i33/')
