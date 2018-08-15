@@ -91,14 +91,17 @@ class GetInformation(object):
 
     def __call__(self, url, html):
         soup = BeautifulSoup(html, 'html.parser')
-        title =
-        house_type =
+        title = []
+        for tag in soup.select('p.title > a'):
+            title.extend([tag.get_text(), ])
+        house_type = []
+        for tag in soup.select('dd > p.mt12')
         which_floor =
         directions =
         build_time =
         area =
         total_price =
-        price = 
+        price =
 
 
 if __name__ == '__main__':
